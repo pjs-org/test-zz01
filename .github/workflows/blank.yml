@@ -22,7 +22,7 @@ jobs:
       - name: Run a multi-line script
         run: |
            echo REL_VER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout) 
-           echo $REL_VER >> "$GITHUB_ENV"
+           echo REL_VER >> "$GITHUB_ENV"
            echo ${{ env.REL_VER }}
            #mvn versions:set -DnewVersion="${{ env.REL_VER }}"-SNAPSHOT
           
