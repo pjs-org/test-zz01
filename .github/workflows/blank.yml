@@ -25,4 +25,5 @@ jobs:
            #echo REL_VER >> "$GITHUB_ENV"
            echo $REL_VER
            mvn versions:set -DnewVersion=$REL_VER-SNAPSHOT
+           chmod +x auto-increment-version.sh && ./auto-increment-version.sh
           
