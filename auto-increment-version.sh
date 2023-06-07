@@ -13,8 +13,8 @@ VNUM3=${VERSION_BITS[2]}
 VNUM1=`echo $VNUM1 | sed 's/v//'`
 
 # Check for #major or #minor in commit message and increment the relevant version number
-MAJOR=`git log --format=%B -n 1 HEAD | grep '#major'`
-MINOR=`git log --format=%B -n 1 HEAD | grep '#minor'`
+MAJOR=`git log --format=%B -n 1 HEAD | grep 'breaking'`
+MINOR=`git log --format=%B -n 1 HEAD | grep 'feat'`
 
 if [ "$MAJOR" ]; then
     echo "Update major version"
@@ -32,6 +32,6 @@ fi
 
 
 #create new tag
-NEW_TAG="v$VNUM1.$VNUM2.$VNUM3"
+NEW_TAG="$VNUM1.$VNUM2.$VNUM3"
 
 echo "Updating $VERSION to $NEW_TAG"
