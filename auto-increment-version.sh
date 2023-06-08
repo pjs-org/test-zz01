@@ -34,6 +34,6 @@ fi
 
 
 #create new tag
-NEW_TAG="$VNUM1.$VNUM2.$VNUM3"
+echo "NEW_TAG=$VNUM1.$VNUM2.$VNUM3-SNAPSHOT" >> $GITHUB_OUTPUT
 
 echo "Updating $VERSION to $NEW_TAG"
