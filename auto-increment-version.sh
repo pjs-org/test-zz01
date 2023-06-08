@@ -32,6 +32,7 @@ else
     VNUM3=$((VNUM3+1))
 fi
 
+NEW_TAG=$VNUM1.$VNUM2.$VNUM3-SNAPSHOT 
 
 #create new tag
 echo "NEW_TAG=$VNUM1.$VNUM2.$VNUM3-SNAPSHOT" >> $GITHUB_OUTPUT
