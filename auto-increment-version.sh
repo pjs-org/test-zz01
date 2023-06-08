@@ -35,6 +35,6 @@ fi
 NEW_TAG=$VNUM1.$VNUM2.$VNUM3-SNAPSHOT 
 
 #create new tag
-echo "NEW_TAG=$VNUM1.$VNUM2.$VNUM3-SNAPSHOT" 
+echo "$VNUM1.$VNUM2.$VNUM3-SNAPSHOT" 
 
-echo "Updating $VERSION to $NEW_TAG"
+#echo "Updating $VERSION to $NEW_TAG"
