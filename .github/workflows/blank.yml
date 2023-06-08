@@ -22,11 +22,13 @@ jobs:
       - name: Run a multi-line script
         uses: actions/auto-increment-version.sh@v3
       - run: |
-           REL_VER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout) 
+          # REL_VER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout) 
            #echo REL_VER >> "$GITHUB_ENV"
-           echo $REL_VER
-           mvn versions:set -DnewVersion=$REL_VER-SNAPSHOT
+          # echo $REL_VER
+          # $mvn versions:set -DnewVersion=$REL_VER-SNAPSHOT
+           pwd
            chmod +x auto-increment-version.sh && ./auto-increment-version.sh
+           pwd
            git status
            git add pom.xml
            git commit -m "blah blah"
