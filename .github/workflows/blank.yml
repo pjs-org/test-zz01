@@ -18,15 +18,10 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v3
-    - id: step1
+    - name: Get the version from pom.xml
       run: |
-       chmod +x auto-increment-version.sh
-       echo "NEW_TAG"="$(./auto-increment-version.sh)" >> $GITHUB_OUTPUT
-  job2: 
-    runs-on: ubuntu-latest
-    needs: job1
-    steps:
-    - run: echo ${{needs.job1.outputs.output1}}
+        MVN_VERSION=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+        echo $MVN_VERSION
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     #steps:
