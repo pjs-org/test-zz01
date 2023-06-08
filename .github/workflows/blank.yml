@@ -25,12 +25,12 @@ jobs:
            echo "NEW_TAG=$(./auto-increment-version.sh)" >> $GITHUB_ENV
            echo "${{ env.NEW_TAG }}"
            echo "Updating version to ${{ env.NEW_TAG }}" 
-           mvn versions:set -DnewVersion=$NEW_TAG
+          # mvn versions:set -DnewVersion=$NEW_TAG
            git config user.name "${GITHUB_ACTOR}"
            git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
            git status
-           git add pom.xml
-           git commit -m "blah blah"
+         #  git add pom.xml
+          # git commit -m "blah blah"
            
    #####################################################
          # REL_VER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout) 
