@@ -27,6 +27,7 @@ jobs:
           # $mvn versions:set -DnewVersion=$REL_VER-SNAPSHOT
            pwd
            chmod +x auto-increment-version.sh && ./auto-increment-version.sh
+           echo new-tag ${{ steps.outputs.NEW_TAG }}
            pwd
            git status
            git add pom.xml
