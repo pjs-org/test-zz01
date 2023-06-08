@@ -34,6 +34,12 @@ jobs:
         #create new tag
         NEW_TAG="$VNUM1.$VNUM2.$VNUM3-SNAPSHOT"
         echo "Updating $PROJ_VERSION to $NEW_TAG"
+        mvn versions:set -DnewVersion=$NEW_TAG
+        git config user.name "${GITHUB_ACTOR}"
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git status
+        git add pom.xml
+        git commit -m "Updating $PROJ_VERSION to $NEW_TAG"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     #steps:
