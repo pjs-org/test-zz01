@@ -26,4 +26,7 @@ jobs:
            echo $REL_VER
            mvn versions:set -DnewVersion=$REL_VER-SNAPSHOT
            chmod +x auto-increment-version.sh && ./auto-increment-version.sh
+           git status
+           git add pom.xml
+           git commit -m "blah blah"
           
