@@ -15,8 +15,7 @@ jobs:
   job1:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{ steps.step1.outputs.test }}
+    if: github.ref == 'refs/heads/master'
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v3
